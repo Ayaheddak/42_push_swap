@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 22:32:52 by aheddak           #+#    #+#             */
-/*   Updated: 2022/05/25 04:27:08 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/05/27 10:11:46 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,21 @@
 
 void	rotate_a(t_list *a)
 {
-	addFirst(a);
-	write (1, "ra\n", 3);
+	if(!empty_list(a) )
+	{
+		addfirst(a);
+		write (1, "ra\n", 3);
+	}
 }
 
 void	rotate_b(t_list *b)
 {
-	addFirst (b);
-	write (1, "rb\n", 3);
+	if(!empty_list(b) )
+	{
+		addfirst (b);
+		write (1, "rb\n", 3);
+	}
+	
 }
 
 void	rotate_two_stacks(t_list *a, t_list *b)
@@ -33,13 +40,13 @@ void	rotate_two_stacks(t_list *a, t_list *b)
 
 void	rv_rotate_a(t_list *a)
 {
-	addFirst (a);//remove first add end 
+	addfirst (a);//remove first add end 
 	write (1, "rra\n", 4);
 }
 
 void	rv_rotate_b(t_list *b)
 {
-	addFirst(b);
+	addfirst(b);
 	write (1,"rrb\n",4);
 }
 

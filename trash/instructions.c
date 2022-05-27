@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 14:11:41 by aheddak           #+#    #+#             */
-/*   Updated: 2022/05/22 22:38:21 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/05/25 23:03:39 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -217,12 +217,12 @@
 //   t_node *n6;
 //   t_list *l1;
 //   t_list *l2;
-//   n1 = AddNode(2);
+//   n1 = AddNode(2);// 2 3 5
 //   n2 = AddNode(3);
 //   n3 = AddNode(5);
 //   n4 = AddNode(8);
 //   n5 = AddNode(9);
-//   n6 = AddNode(0);
+//   n6 = AddNode(0);0
 //   // printf("%d\n",n1->data);
 //   // printf("%d\n",n2->data);
 //   // printf("%d\n",n3->data);

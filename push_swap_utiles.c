@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 22:22:44 by aheddak           #+#    #+#             */
-/*   Updated: 2022/05/25 04:40:32 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/05/27 10:19:16 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,22 @@ t_node	*addnode(int value)
 	newnode->next = NULL;
 	return (newnode);
 }
+void	add_elm_last(t_list *a, int value)
+{
+	t_node *newnode;
+	t_node *tmp;
 
+	newnode = addnode(value);
+	if(a->head == NULL)
+		a->head = newnode;
+	else 
+	{
+		while (tmp->next != NULL)
+			tmp = tmp->next;
+		tmp->next = newnode;
+	}
+	
+}
 t_list	*creatlist(void)
 {
 	t_list	*newlist;
@@ -41,7 +56,13 @@ int	empty_list(t_list *s)
 	return (0);
 }
 
-int	get_elem(t_list *l)
+int only_elem(t_list *s)
+{
+	if (s->head == s->top)
+		return (1);
+	return (0);
+}
+int	get_lastelm(t_list *l)
 {
 	t_node	*tmp;
 	int		value;
@@ -63,7 +84,7 @@ void	addfirst(t_list *l)
 {
 	t_node	*newnode;
 
-	newnode = AddNode(get_elem(l));
+	newnode = addnode(get_lastelm(l));
 	newnode->next = l->head;
 	l->head = newnode;
 }

@@ -6,13 +6,13 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 03:04:13 by aheddak           #+#    #+#             */
-/*   Updated: 2022/05/25 10:54:41 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/05/26 22:40:59 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap.h"//push_at_first
 
-void	hasna_aya(t_list *stack, t_node *n)
+void	aya_hasnaa(t_list *stack, t_node *n)
 {
 	n->next = stack->head;
 	stack->head = n;
@@ -34,24 +34,36 @@ t_list	*get_stack(int ac, char *av[])
 		while (s_str[j])
 		{
 			atoi = ft_atoi_handle(s_str[j]);
-			hasna_aya(stack, addnode(atoi));
+			aya_hasnaa(stack, addnode(atoi));
 			j++;
 		}
 		i++;
 	}
 	return (stack);
 }
-void ft_duplicates(t_list *a)
+
+void	ft_duplicates(t_list *a)
 {
-	t_node *tmp;
-	t_node *b;
+	t_node	*tmp;
+	t_node	*b;
 
 	tmp = a->head;
-	while(tmp!= NULL)
-	{ 
+	while (tmp != NULL)
+	{
+		b = tmp->next;
+		while (b != NULL)
+		{	
+			if (tmp->data == b->data)
+			{
+				write (1, "Error\n", 6);
+				exit(1);
+			}
+			b = b->next;
+		}
 		tmp = tmp->next;
 	}
 }
+
 void	afficherlist(t_list *s)
 {
 	t_node	*tmp;
@@ -64,7 +76,7 @@ void	afficherlist(t_list *s)
 		tmp = tmp->next;
 	}
 	printf("\n");
-	printf("-------------- salinaa --------------\n");
+	printf("---------- aywaaa salina -----------\n");
 }
 
 // int main(int ac, char *av[])
@@ -76,7 +88,9 @@ void	afficherlist(t_list *s)
 //     b = creatlist();
 //     if(ac > 1)
 //     {
-//         a = get_stack(ac,av);
-//         AfficherList(a);
+//         a = get_stack(ac, av);
+// 		ft_duplicates(a);
+//         afficherlist(a);
 //     }
+// 	//while (1);
 // }
