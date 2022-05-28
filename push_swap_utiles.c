@@ -51,7 +51,7 @@ t_list	*creatlist(void)
 
 int	empty_list(t_list *s)
 {
-	if (s->head == NULL)
+	if (s->top == NULL)
 		return (1);
 	return (0);
 }
@@ -78,6 +78,25 @@ int	get_lastelm(t_list *l)
 		}
 		tmp = tmp->next;
 	}
+}
+
+void    add_elm_last(t_list *s, int value)
+{
+    t_node *tmp;
+    t_node *n;
+    
+    n = addnode(value);
+    tmp = s->head;
+    while(tmp != NULL)
+    {
+      if(tmp->next == s->top)
+    { 
+      s->top->next = n;
+      s->top = n;
+      break;
+    }
+    tmp = tmp->next;
+    }  
 }
 
 void	addfirst(t_list *l)
