@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 22:22:44 by aheddak           #+#    #+#             */
-/*   Updated: 2022/05/29 13:17:16 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/05/29 16:58:08 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,7 @@ int	only_elem(t_list *s)
 // 	n->next = stack->head;
 // 	stack->head = n;
 // }
-
-int	get_last(t_list *l)
+int get_last(t_list *l)	//top
 {
 	t_node	*tmp;
 	int		value;
@@ -81,7 +80,7 @@ void	addlast(t_list *s, int value)
 
 	n = addnode(value);
 	tmp = s->head;
-	while (tmp != NULL)
+	while (tmp != NULL)//rm boucle
 	{
 		if (tmp->next == s->top)
 		{

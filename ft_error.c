@@ -6,15 +6,16 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 03:04:13 by aheddak           #+#    #+#             */
-/*   Updated: 2022/05/29 14:37:31 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/05/29 17:57:21 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	addfirst(t_list *stack, t_node *n)
+void	addfirst(t_list *stack, t_node *n)//addlast
 {
-	
+	if (!stack->top)
+		stack->top = n;
 	n->next = stack->head;
 	stack->head = n;
 	
@@ -84,17 +85,17 @@ int main(int ac, char *av[])
 {
     t_list *a;
     t_list *b;
-	//int lsize;
+	int lsize;
 
     a = creatlist();
 	b = creatlist();
-
     if(ac > 1)
     {
         a = get_stack(ac, av);
-		//ft_duplicates(a);
+		// swap_stack_a(a);
+		ft_duplicates(a);
 		afficherlist(a);
-		//lsize = get_lsize(a);
+		lsize = get_lsize(a);
 		// printf("%d\n\n",a->head->data);
 		// printf("\n\n%d",a->head->next->data);
 		// printf("\n\n%d",a->head->next->next->data);
@@ -105,12 +106,14 @@ int main(int ac, char *av[])
 		//	three_elem(a);
 		//}
 		//afficherlist(a);
-		// if (!is_sorted(a) && !empty_list(a) && !only_elem(a))
-		// {
-		// 	if (lsize == 2)
-		// 		swap_stack_a(a);
+		if (!is_sorted(a))
+		{
+			if (lsize == 2)
+				swap_stack_a(a);
 			
-		// }
+			
+		}
+		afficherlist(a);
     }
 	//while (1);
 }

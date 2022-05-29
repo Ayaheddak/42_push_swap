@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 01:00:54 by aheddak           #+#    #+#             */
-/*   Updated: 2022/05/25 03:35:22 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/05/29 16:16:29 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,20 +41,18 @@ int	ft_atoi_handle(char *av)
 	cmp = 1;
 	while ((av[c] >= '\t' && av[c] <= '\r') || av[c] == ' ')
 		c++;
-	if (av[c] == '-')
-	{
-		cmp = -1;
-		c++;
-	}
-	if (check_digits(av, c) != 0)
-		return (ft_error());
+		// if (av[c] == '-')
+	cmp = -1 * (av[c] == '-') + 1 * (av[c] != '-');
+	c += ((av[c] == '-' || av[c] == '+') && av[c + 1]);
+	// if (check_digits(av, c) != 0)
+	// 	return (ft_error());
 	while (av[c] >= '0' && av[c] <= '9')
 	{
 		res = (av[c] - '0') + (res * 10);
 		c++;
 	}
 	res = res * cmp;
-	if (res < -2147483648 || res > 2147483647)
+	if (av[c] || (res < -2147483648 || res > 2147483647))
 		return (ft_error());
 	return (res);
 }
