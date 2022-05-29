@@ -62,25 +62,24 @@ int only_elem(t_list *s)
 		return (1);
 	return (0);
 }
-int	get_lastelm(t_list *l)
-{
-	t_node	*tmp;
-	int		value;
+// int	get_lastelm(t_list *l)
+// {
+// 	t_node	*tmp;
+// 	int		value;
 
-	tmp = l->head;
-	while (tmp != NULL)
-	{
-		if (tmp->next == l->top)
-		{
-			value = tmp->next->data;
-			tmp->next = NULL;
-			return (value);
-		}
-		tmp = tmp->next;
-	}
-}
-
-void    add_elm_last(t_list *s, int value)
+// 	tmp = l->head;
+// 	while (tmp != NULL)
+// 	{
+// 		if (tmp->next == l->top)
+// 		{
+// 			value = tmp->next->data;
+// 			tmp->next = NULL;
+// 			return (value);
+// 		}
+// 		tmp = tmp->next;
+// 	}
+// }
+void    addLast(t_list *s, int value)
 {
     t_node *tmp;
     t_node *n;
@@ -99,11 +98,48 @@ void    add_elm_last(t_list *s, int value)
     }  
 }
 
-void	addfirst(t_list *l)
-{
-	t_node	*newnode;
 
-	newnode = addnode(get_lastelm(l));
-	newnode->next = l->head;
-	l->head = newnode;
+// void    add_elm_last(t_list *s, int value)
+// {
+//     t_node *tmp;
+//     t_node *n;
+    
+//     n = addnode(value);
+//     tmp = s->head;
+//     while(tmp != NULL)
+//     {
+//       if(tmp->next == s->top)
+//     { 
+//       s->top->next = n;
+//       s->top = n;
+//       break;
+//     }
+//     tmp = tmp->next;
+//     }  
+// }
+int    get_last(t_list *l)
+{
+    t_node    *tmp;
+    int        value;
+
+    tmp = l->head;
+    while (tmp != NULL)
+    {
+        if (tmp->next == l->top)
+        {
+            value = l->top->data;
+            tmp->next= NULL;
+            l->top =tmp;
+            return (value);
+        }
+        tmp = tmp->next;
+    }
 }
+// void	addfirst(t_list *l)
+// {
+// 	t_node	*newnode;
+
+// 	newnode = addnode(get_lastelm(l));
+// 	newnode->next = l->head;
+// 	l->head = newnode;
+// }
