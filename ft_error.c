@@ -17,6 +17,11 @@
 // 	n->next = stack->head;
 // 	stack->head = n;
 // }
+void	addfirst(t_list *stack, t_node *n)
+{
+	n->next = stack->head;
+	stack->head = n;
+}
 
 t_list	*get_stack(int ac, char *av[])
 {
