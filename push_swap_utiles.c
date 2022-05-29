@@ -135,6 +135,20 @@ int    get_last(t_list *l)
         tmp = tmp->next;
     }
 }
+int get_first(t_list *l)
+{
+  int id;
+  t_node *tmp;
+  
+  if (!empty_list(l))
+  {
+    tmp=l->head;
+    id = l->head->data;
+    l->head = l->head->next;
+    tmp->next = NULL;
+    return(id);
+  }
+}
 // void	addfirst(t_list *l)
 // {
 // 	t_node	*newnode;
