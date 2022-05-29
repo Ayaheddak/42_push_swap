@@ -14,7 +14,7 @@
 
 void    push_a(t_list *a, t_list *b)
 {
-  if(!empty_list(b))
+  if(!empty_list(a))
   {
     addLast(a,get_last(b));
     write(1, "pa\n", 3);
