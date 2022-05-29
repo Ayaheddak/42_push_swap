@@ -16,7 +16,7 @@ void    push_a(t_list *a, t_list *b)
 {
   if(!empty_list(b))
   {
-    add_elm_last(a,get_lastelm(b));
+    addLast(a,get_last(b));
     write(1, "pa\n", 3);
   }
 }
@@ -41,25 +41,32 @@ void    push_a(t_list *a, t_list *b)
 // 	}
 // 	write(1, "pa\n", 3);
 // }
-
-void	push_b(t_list *a, t_list *b)
+void    push_b(t_list *a, t_list *b)
 {
-	t_node	*tmp;
-	t_node	*newnode;
-	int		value;
-
-	//value = 	get_lastelm(a);
-	newnode = addnode(value);
-	tmp = b->head;
-	while (tmp != NULL)
-	{
-		if (tmp->next == NULL)
-		{
-			tmp->next = newnode;
-			newnode->next = NULL;
-			break ;
-		}
-		tmp = tmp->next;
-	}
-	write(1, "pb\n", 3);
+  if(!empty_list(b))
+  {
+    addLast(b,get_last(a));
+    write(1, "pb\n", 3);
+  }
 }
+// void	push_b(t_list *a, t_list *b)
+// {
+// 	t_node	*tmp;
+// 	t_node	*newnode;
+// 	int		value;
+
+// 	//value = 	get_lastelm(a);
+// 	newnode = addnode(value);
+// 	tmp = b->head;
+// 	while (tmp != NULL)
+// 	{
+// 		if (tmp->next == NULL)
+// 		{
+// 			tmp->next = newnode;
+// 			newnode->next = NULL;
+// 			break ;
+// 		}
+// 		tmp = tmp->next;
+// 	}
+// 	write(1, "pb\n", 3);
+// }
