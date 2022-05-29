@@ -23,6 +23,7 @@ t_node	*addnode(int value)
 	newnode->next = NULL;
 	return (newnode);
 }
+// is_sorted 
 // void	add_elm_last(t_list *a, int value)
 // {
 // 	t_node *newnode;
