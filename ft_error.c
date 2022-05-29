@@ -12,11 +12,11 @@
 
 #include "push_swap.h"//push_at_first
 
-void	push_first(t_list *stack, t_node *n)
-{
-	n->next = stack->head;
-	stack->head = n;
-}
+// void	push_first(t_list *stack, t_node *n)
+// {
+// 	n->next = stack->head;
+// 	stack->head = n;
+// }
 
 t_list	*get_stack(int ac, char *av[])
 {
@@ -34,7 +34,7 @@ t_list	*get_stack(int ac, char *av[])
 		while (s_str[j])
 		{
 			atoi = ft_atoi_handle(s_str[j]);
-			push_first(stack, addnode(atoi));
+			addfirst(stack, addnode(atoi));
 			j++;
 		}
 		i++;
