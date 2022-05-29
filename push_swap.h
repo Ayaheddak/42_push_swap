@@ -30,6 +30,7 @@ typedef struct s_list
 	t_node	*head;
 	t_node	*top;
 }	t_list;
+int	get_first(t_list *l);
 char	**ft_split(char const *s, char c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strdup(const char *s1);
