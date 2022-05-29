@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 14:29:28 by aheddak           #+#    #+#             */
-/*   Updated: 2022/05/27 10:12:38 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/05/29 13:36:14 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ typedef struct s_node
 {
 	int					data;
 	struct s_node		*next;
-	struct s_node		*prev;
-
 }	t_node;
 
 typedef struct s_list
@@ -30,34 +28,36 @@ typedef struct s_list
 	t_node	*head;
 	t_node	*top;
 }	t_list;
-int	get_first(t_list *l);
+
 char	**ft_split(char const *s, char c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strdup(const char *s1);
 size_t	ft_strlen(const char *s);
 int		ft_atoi_handle(char *str);
+void	swap_stack(t_list *s);
+void	swap_stack_a(t_list *a);
+void	swap_stack_b(t_list *b);
+void	swap_2_stacks(t_list *a, t_list *b);
 t_node	*addnode(int value);
 t_list	*creatlist(void);
-int	empty_list(t_list *s);
-void	addfirst(t_list *stack, t_node *n);
-// void	swap_stack(t_list *s);
-// void	swap_stack_a(t_list *a);
-// void	swap_stack_b(t_list *b);
-void	swap_2_stacks(t_list *a, t_list *b);
-//int		get_lastelm(t_list *l);
-void    addLast(t_list *s, int value);
-int	get_last(t_list *l);
-int	only_elem(t_list *s);
-void	push_a(t_list *a, t_list *b);
-void	push_b(t_list *a, t_list *b);
-void	addfirst(t_list *l);
-void	rotate_a(t_list *a);
-void	rotate_b(t_list *b);
-void	rotate_two_stacks(t_list *a, t_list *b);
+int		empty_list(t_list *s);
+int		only_elem(t_list *s);
 void	rv_rotate_a(t_list *a);
 void	rv_rotate_b(t_list *b);
+void	rv_rotate_stackes(t_list *b, t_list *a);
+void	addfirst(t_list *stack, t_node *n);
+void	addfirst(t_list *stack, t_node *n);
+void	rotate_b(t_list *b);
+void	rotate_a(t_list *a);
+void	rotate_two_stackes(t_list *a, t_list *b);
+int		get_last(t_list *l);
+void	addlast(t_list *s, int value);
+void	push_a(t_list *a, t_list *b);
+void	push_b(t_list *a, t_list *b);
 void	afficherlist(t_list *s);
-void	rv_rotate_two_stackes(t_list *b, t_list *a);
-void push_stack(t_list *s,t_node *n);
+int		is_sorted(t_list *l);
+t_list	*conditions(t_list *l);
+int		get_lsize(t_list *l);
+t_list  *three_elem(t_list *a);
 
 #endif

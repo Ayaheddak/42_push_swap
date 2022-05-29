@@ -6,23 +6,19 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 03:04:13 by aheddak           #+#    #+#             */
-/*   Updated: 2022/05/26 22:40:59 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/05/29 14:37:31 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"//push_at_first
+#include "push_swap.h"
 
-// void	push_first(t_list *stack, t_node *n)
-// {
-// 	n->next = stack->head;
-// 	stack->head = n;
-// }
 void	addfirst(t_list *stack, t_node *n)
 {
+	
 	n->next = stack->head;
 	stack->head = n;
+	
 }
-
 t_list	*get_stack(int ac, char *av[])
 {
 	int		i;
@@ -84,18 +80,37 @@ void	afficherlist(t_list *s)
 	printf("---------- aywaaa salina -----------\n");
 }
 
-// int main(int ac, char *av[])
-// {
-//     t_list *a;
-//     t_list *b;
+int main(int ac, char *av[])
+{
+    t_list *a;
+    t_list *b;
+	//int lsize;
 
-//     a = creatlist();
-//     b = creatlist();
-//     if(ac > 1)
-//     {
-//         a = get_stack(ac, av);
-// 		ft_duplicates(a);
-//         afficherlist(a);
-//     }
-// 	//while (1);
-// }
+    a = creatlist();
+	b = creatlist();
+
+    if(ac > 1)
+    {
+        a = get_stack(ac, av);
+		//ft_duplicates(a);
+		afficherlist(a);
+		//lsize = get_lsize(a);
+		// printf("%d\n\n",a->head->data);
+		// printf("\n\n%d",a->head->next->data);
+		// printf("\n\n%d",a->head->next->next->data);
+		// printf("\n\n%d",a->top->data);
+		//if (lsize == 2)
+		//swap_stack_a(a);
+	//	if (lsize == 3)
+		//	three_elem(a);
+		//}
+		//afficherlist(a);
+		// if (!is_sorted(a) && !empty_list(a) && !only_elem(a))
+		// {
+		// 	if (lsize == 2)
+		// 		swap_stack_a(a);
+			
+		// }
+    }
+	//while (1);
+}

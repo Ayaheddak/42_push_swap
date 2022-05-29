@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 14:11:41 by aheddak           #+#    #+#             */
-/*   Updated: 2022/05/25 23:03:39 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/05/29 11:44:21 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -217,17 +217,17 @@
 //   t_node *n6;
 //   t_list *l1;
 //   t_list *l2;
-//   n1 = AddNode(2);// 2 3 5
-//   n2 = AddNode(3);
-//   n3 = AddNode(5);
-//   n4 = AddNode(8);
-//   n5 = AddNode(9);
-//   n6 = AddNode(0);0
+//   n1 = addnode(2);// 2 3 5
+//   n2 = addnode(3);
+//   n3 = addnode(5);
+//   n4 = addnode(8);
+//   n5 = addnode(9);
+//   n6 = addnode(0);
 //   // printf("%d\n",n1->data);
 //   // printf("%d\n",n2->data);
 //   // printf("%d\n",n3->data);
-//   l1 = CreatList();
-//   l2 = CreatList();
+//   l1 = creatlist();
+//   l2 = creatlist();
 //   l1->head = n1;
 //   l1->top = n3;
 //   n1->next =n2;
@@ -236,11 +236,17 @@
 //   l2->top = n6;
 //   n4->next =n5;
 //   n5->next = n6;
-//   afficherList(l1);
+//   afficherlist(l1);
+//   swap_stack_a(l1);
+//   afficherlist(l1);
 //   rv_rotate_a(l1);
-//   afficherList(l1);
-//   //swap_stack_a(l1);
-//  // afficherList(l1);
+//   afficherlist(l1);
+//   push_a(l1,l2);
+//   afficherlist(l1);
+//   afficherlist(l2);
+//   rotate_a(l1);
+//   afficherlist(l1);
+  
 //  // printf("\n%d\n", l1->top->data);
 //    //afficherList(l2);
 //  // swap_stack_b(l2);
