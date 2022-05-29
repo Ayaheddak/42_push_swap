@@ -38,7 +38,7 @@ int		ft_atoi_handle(char *str);
 t_node	*addnode(int value);
 t_list	*creatlist(void);
 int	empty_list(t_list *s);
-void	push_first(t_list *stack, t_node *n);
+void	addfirst(t_list *stack, t_node *n);
 // void	swap_stack(t_list *s);
 // void	swap_stack_a(t_list *a);
 // void	swap_stack_b(t_list *b);
