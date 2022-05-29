@@ -23,22 +23,22 @@ t_node	*addnode(int value)
 	newnode->next = NULL;
 	return (newnode);
 }
-void	add_elm_last(t_list *a, int value)
-{
-	t_node *newnode;
-	t_node *tmp;
+// void	add_elm_last(t_list *a, int value)
+// {
+// 	t_node *newnode;
+// 	t_node *tmp;
 
-	newnode = addnode(value);
-	if(a->head == NULL)
-		a->head = newnode;
-	else 
-	{
-		while (tmp->next != NULL)
-			tmp = tmp->next;
-		tmp->next = newnode;
-	}
+// 	newnode = addnode(value);
+// 	if(a->head == NULL)
+// 		a->head = newnode;
+// 	else 
+// 	{
+// 		while (tmp->next != NULL)
+// 			tmp = tmp->next;
+// 		tmp->next = newnode;
+// 	}
 	
-}
+// }
 t_list	*creatlist(void)
 {
 	t_list	*newlist;
