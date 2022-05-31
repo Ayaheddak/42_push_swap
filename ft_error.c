@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 03:04:13 by aheddak           #+#    #+#             */
-/*   Updated: 2022/05/31 08:19:49 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/05/31 10:37:06 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,11 +97,11 @@ int main(int ac, char *av[])
 		ft_duplicates(a);
 		afficherlist(a);
 		sort_lessten(a,b);
-	//	printf("%d\n\n", get_lsize(a));
+	//printf("%d\n\n", get_lsize(a));
 	//	printf("%d\n\n", get_min(a));
 	//	printf("%d\n\n", get_index(a,get_min(a)));
-		afficherlist(a);
-	//	afficherlist(b);
+	afficherlist(a);
+		afficherlist(b);
     }
 	//while (1);
 }

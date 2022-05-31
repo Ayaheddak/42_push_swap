@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 12:48:15 by aheddak           #+#    #+#             */
-/*   Updated: 2022/05/31 08:44:14 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/05/31 10:53:56 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void    sort_lessten(t_list *a, t_list *b)
         else if (lsize == 3)
             three_elements(a);
         else if (lsize > 3 && lsize <= 10)
-            five_elements(a, b);
+            five(a, b);
     } 
 }
 
@@ -88,22 +88,6 @@ int get_min(t_list *l)
     return (min);
 }
 
-// int get_index(t_list *l ,int n)
-// {
-//     int index;
-//     t_node *tmp;
-
-//     index = 0;
-//     tmp = l->head;
-//     while (tmp->next != NULL )
-//     {
-//         if(tmp->next->data == n)
-//             return (index);
-//         index++;
-//         tmp = tmp->next;
-//     }
-//   //  return (index);
-// }
 
 int get_index(t_list *l ,int n)
 {
@@ -119,21 +103,22 @@ int get_index(t_list *l ,int n)
         index++;
         tmp = tmp->next;
     }
-  //  return (index);
+    //return (index);
 }
+
+
 t_list *five_elements(t_list *a, t_list *b)
 {
     int index_min;
     int proximity;
     int i;
-
-    index_min = get_index(a,get_min(a));
-    proximity = (get_lsize(a) / 2);
     
+    index_min = get_index(a,get_min(a));
+    proximity = (get_lsize(a) / 2); 
     i = 0;
-   if (proximity > index_min)
+    if (proximity > index_min)
     {
-        while (i < get_lsize(a) - index_min -1)
+        while (i < index_min + 1)
         {
              rv_rotate_a(a);
              i++;
@@ -147,5 +132,19 @@ t_list *five_elements(t_list *a, t_list *b)
             i++;
         }
     } 
+    push_b(a,b);
 }
-      
+
+t_list *five(t_list *a, t_list *b)
+{
+    int j;
+    int i;
+
+   i = get_lsize(a) - 3;
+    j = 0;
+    while (j < i)
+    {
+        five_elements(a,b);
+        j++;
+    }
+}
