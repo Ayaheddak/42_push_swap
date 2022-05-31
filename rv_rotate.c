@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 10:35:45 by aheddak           #+#    #+#             */
-/*   Updated: 2022/05/29 12:46:55 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/05/31 04:36:43 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,22 +31,28 @@
 //     }  
 // }
 
-int	get_first(t_list *l)
+t_node	*get_first(t_list *l)
 {
-	int		id;
+	//t_node	*id;
 	t_node	*tmp;
 
-	if (!empty_list(l))
-	{
+	//if (!empty_list(l))
+//	{
 		tmp = l->head;
-		id = l->head->data;
+		//id = l->head;
 		l->head = l->head->next;
 		tmp->next = NULL;
-		return (id);
-	}
-	return (1);
+		return (tmp);
+	//}
 }
+// t_node    *get_first(t_list *l)
+// {
+// t_node    *temp;
 
+//     temp = l->head;
+//     l->head = temp->next;
+//     return (temp);
+// }
 void	rv_rotate_a(t_list *a)
 {
 	addlast(a, get_first(a));

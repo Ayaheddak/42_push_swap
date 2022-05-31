@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 22:22:44 by aheddak           #+#    #+#             */
-/*   Updated: 2022/05/29 16:58:08 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/05/31 04:20:45 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,64 +48,7 @@ int	only_elem(t_list *s)
 	return (0);
 }
 
-// void	addfirst(t_list *stack, t_node *n)
-// {
-// 	n->next = stack->head;
-// 	stack->head = n;
-// }
-int get_last(t_list *l)	//top
-{
-	t_node	*tmp;
-	int		value;
-
-	tmp = l->head;
-	while (tmp != NULL)
-	{
-		if (tmp->next == l->top)
-		{
-			value = l->top->data;
-			tmp->next = NULL;
-			l->top = tmp;
-			return (value);
-		}
-		tmp = tmp->next;
-	}
-	return (1);
-}
-
-void	addlast(t_list *s, int value)
-{
-	t_node	*tmp;
-	t_node	*n;
-
-	n = addnode(value);
-	tmp = s->head;
-	while (tmp != NULL)//rm boucle
-	{
-		if (tmp->next == s->top)
-		{
-			s->top->next = n;
-			s->top = n;
-			break ;
-		}
-		tmp = tmp->next;
-	}
-}
-
-int	is_sorted(t_list *l)
-{
-	t_node	*tmp;
-
-	tmp = tmp->next;
-	while (tmp != NULL)
-	{
-		if (tmp->data < tmp->next->data)
-			return (0);
-		tmp = tmp->next;
-	}
-	return (1);
-}
-// int	get_lastelm(t_list *l)
+// int get_last(t_list *l)	//top
 // {
 // 	t_node	*tmp;
 // 	int		value;
@@ -115,86 +58,135 @@ int	is_sorted(t_list *l)
 // 	{
 // 		if (tmp->next == l->top)
 // 		{
-// 			value = tmp->next->data;
+// 			value = l->top->data;
 // 			tmp->next = NULL;
+// 			l->top = tmp;
 // 			return (value);
 // 		}
 // 		tmp = tmp->next;
 // 	}
+// 	return (1);
 // }
-// void    addLast(t_list *s, int value)
-// {
-//     t_node *tmp;
-//     t_node *n;
+t_node *get_last(t_list *l)
+{
+    t_node    *tmp;
+    t_node    *value;
 
-//     n = addnode(value);
-//     tmp = s->head;
-//     while(tmp != NULL)
-//     {
-//       if(tmp->next == s->top)
-//     { 
-//       s->top->next = n;
-//       s->top = n;
-//       break;
-//     }
-//     tmp = tmp->next;
-//     }  
-// }
-// void    add_elm_last(t_list *s, int value)
-// {
-//     t_node *tmp;
-//     t_node *n;
-
-//     n = addnode(value);
-//     tmp = s->head;
-//     while(tmp != NULL)
-//     {
-//       if(tmp->next == s->top)
-//     { 
-//       s->top->next = n;
-//       s->top = n;
-//       break;
-//     }
-//     tmp = tmp->next;
-//     }  
-// }
-// int    get_last(t_list *l)
+   tmp = l->head;
+   while (tmp != NULL)
+    {
+       if (tmp->next == l->top)
+        {
+            value = l->top;
+            tmp->next = NULL;
+            l->top = tmp;
+            return (value);
+        }
+      tmp = tmp->next;
+   }
+}
+// t_node *get_last(t_list *l)    //top
 // {
 //     t_node    *tmp;
-//     int        value;
+//     t_node    *value;
 
 //     tmp = l->head;
 //     while (tmp != NULL)
 //     {
 //         if (tmp->next == l->top)
 //         {
-//             value = l->top->data;
-//             tmp->next= NULL;
-//             l->top =tmp;
+//             value = l->top;
+//             tmp->next = NULL;
+//             l->top = tmp;
 //             return (value);
 //         }
 //         tmp = tmp->next;
 //     }
+//     return (1);
 // }
-// int get_first(t_list *l)
-// {
-//   int id;
-//   t_node *tmp;
 
-//   if (!empty_list(l))
-//   {
-//     tmp=l->head;
-//     id = l->head->data;
-//     l->head = l->head->next;
-//     tmp->next = NULL;
-//     return(id);
-//   }
-// }
-// void	addfirst(t_list *l)
+// void	addlast(t_list *s, int value)
 // {
-// 	t_node	*newnode;
+// 	t_node	*tmp;
+// 	t_node	*n;
 
-// 	newnode = addnode(get_lastelm(l));
-// 	newnode->next = l->head;
-// 	l->head = newnode;
+// 	n = addnode(value);
+// 	tmp = s->head;
+// 	// 	if (!stack->top)
+// 	// 	stack->top = n;
+// 	// n->next = stack->head;
+// 	// stack->head = n;
+// 	if (!empty_list(s) && only_elem(s))
+// 	{
+// 		if (!s->top)
+// 			s->top = n;
+// 		n->next = s->head;
+// 		s->head = n;
+// 	}
+// 	while (tmp != NULL)//rm boucle
+// 	{
+// 		if (tmp->next == s->top)
+// 		{
+// 			s->top->next = n;
+// 			s->top = n;
+// 			break ;
+// 		}
+// 		tmp = tmp->next;
+// 	}
 // }
+// void    addlast(t_list *s, t_node *n)
+// {
+//     t_node    *tmp;
+    
+//     tmp = s->head;
+//     // //     if (!stack->top)
+//     // //     stack->top = n;
+//     // // n->next = stack->head;
+//     // // stack->head = n;
+//     // if (!empty_list(s) && only_elem(s))
+//     // {
+//     //     if (!s->top)
+//     //         s->top = n;
+//     //     n->next = s->head;
+//     //     s->head = n;
+//     // }
+//     while (tmp != NULL)
+//     {
+//         if (tmp->next == s->top)
+//         {
+//             s->top->next = n;
+//             s->top = n;
+//             break ;
+//         }
+//         tmp = tmp->next;
+//     }
+// }
+void    addlast(t_list *s, t_node *n)
+{
+  if(empty_list(s))
+  {
+    n->next = s->head;
+    s->head = n;
+  }
+  else
+  {
+     s->top->next = n;
+     s->top = n;
+  }
+}
+
+int	is_sorted(t_list *l)
+{
+    t_node    *tmp;
+
+    tmp = l->head;
+    if (empty_list(l))
+        return (0);
+    while (tmp->next != NULL)
+    {
+        if (tmp->data < tmp->next->data)
+            return(0);
+        tmp = tmp->next;
+    }
+    return (1);
+}

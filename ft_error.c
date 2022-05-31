@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 03:04:13 by aheddak           #+#    #+#             */
-/*   Updated: 2022/05/29 17:57:21 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/05/31 08:19:49 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ void	addfirst(t_list *stack, t_node *n)//addlast
 	stack->head = n;
 	
 }
-t_list	*get_stack(int ac, char *av[])
+
+t_list	*get_stack(int ac, char **av)
 {
 	int		i;
 	int		j;
@@ -39,6 +40,7 @@ t_list	*get_stack(int ac, char *av[])
 			addfirst(stack, addnode(atoi));
 			j++;
 		}
+		free(s_str[j]);
 		i++;
 	}
 	return (stack);
@@ -92,28 +94,14 @@ int main(int ac, char *av[])
     if(ac > 1)
     {
         a = get_stack(ac, av);
-		// swap_stack_a(a);
 		ft_duplicates(a);
 		afficherlist(a);
-		lsize = get_lsize(a);
-		// printf("%d\n\n",a->head->data);
-		// printf("\n\n%d",a->head->next->data);
-		// printf("\n\n%d",a->head->next->next->data);
-		// printf("\n\n%d",a->top->data);
-		//if (lsize == 2)
-		//swap_stack_a(a);
-	//	if (lsize == 3)
-		//	three_elem(a);
-		//}
-		//afficherlist(a);
-		if (!is_sorted(a))
-		{
-			if (lsize == 2)
-				swap_stack_a(a);
-			
-			
-		}
+		sort_lessten(a,b);
+	//	printf("%d\n\n", get_lsize(a));
+	//	printf("%d\n\n", get_min(a));
+	//	printf("%d\n\n", get_index(a,get_min(a)));
 		afficherlist(a);
+	//	afficherlist(b);
     }
 	//while (1);
 }

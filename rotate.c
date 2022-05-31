@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 22:32:52 by aheddak           #+#    #+#             */
-/*   Updated: 2022/05/29 11:22:22 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/05/31 04:09:07 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,19 +33,14 @@
 
 void	rotate_a(t_list *a)
 {
-	t_node	*newnode;
-
-	newnode = addnode(get_last(a));
-	addfirst(a, newnode);
+	
+	addfirst(a, get_last(a));
 	write (1, "ra\n", 3);
 }
 
 void	rotate_b(t_list *b)
 {
-	t_node	*newnode;
-
-	newnode = addnode(get_last(b));
-	addfirst(b, newnode);
+	addfirst(b, get_last(b));
 	write (1, "rb\n", 3);
 }
 
