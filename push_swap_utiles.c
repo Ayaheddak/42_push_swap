@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 22:22:44 by aheddak           #+#    #+#             */
-/*   Updated: 2022/05/31 04:20:45 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/02 02:16:01 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,119 +48,62 @@ int	only_elem(t_list *s)
 	return (0);
 }
 
-// int get_last(t_list *l)	//top
-// {
-// 	t_node	*tmp;
-// 	int		value;
-
-// 	tmp = l->head;
-// 	while (tmp != NULL)
-// 	{
-// 		if (tmp->next == l->top)
-// 		{
-// 			value = l->top->data;
-// 			tmp->next = NULL;
-// 			l->top = tmp;
-// 			return (value);
-// 		}
-// 		tmp = tmp->next;
-// 	}
-// 	return (1);
-// }
-t_node *get_last(t_list *l)
-{
-    t_node    *tmp;
-    t_node    *value;
-
-   tmp = l->head;
-   while (tmp != NULL)
-    {
-       if (tmp->next == l->top)
-        {
-            value = l->top;
-            tmp->next = NULL;
-            l->top = tmp;
-            return (value);
-        }
-      tmp = tmp->next;
-   }
-}
-// t_node *get_last(t_list *l)    //top
+// t_node *get_last(t_list *l)
 // {
 //     t_node    *tmp;
 //     t_node    *value;
 
-//     tmp = l->head;
-//     while (tmp != NULL)
-//     {
-//         if (tmp->next == l->top)
-//         {
-//             value = l->top;
+//   //tmp = l->head;
+//   if( only_elem(l))
+//   {
+//       value = l->head;
+//     l->head = NULL;
+//     return(value);
+//   }
+//  else
+//   //while (tmp != NULL)
+//    //{
+//      // if (tmp->next == l->top)
+//      //  {
+//           {
+//               value = l->top;
 //             tmp->next = NULL;
 //             l->top = tmp;
 //             return (value);
-//         }
-//         tmp = tmp->next;
-//     }
-//     return (1);
+//           }  
+//      //  }
+//     // tmp = tmp->next;
+//  // }
 // }
 
-// void	addlast(t_list *s, int value)
-// {
-// 	t_node	*tmp;
-// 	t_node	*n;
+t_node *get_last(t_list *l)
+{
+   t_node    *tmp;
+   t_node    *value;
 
-// 	n = addnode(value);
-// 	tmp = s->head;
-// 	// 	if (!stack->top)
-// 	// 	stack->top = n;
-// 	// n->next = stack->head;
-// 	// stack->head = n;
-// 	if (!empty_list(s) && only_elem(s))
-// 	{
-// 		if (!s->top)
-// 			s->top = n;
-// 		n->next = s->head;
-// 		s->head = n;
-// 	}
-// 	while (tmp != NULL)//rm boucle
-// 	{
-// 		if (tmp->next == s->top)
-// 		{
-// 			s->top->next = n;
-// 			s->top = n;
-// 			break ;
-// 		}
-// 		tmp = tmp->next;
-// 	}
-// }
-// void    addlast(t_list *s, t_node *n)
-// {
-//     t_node    *tmp;
-    
-//     tmp = s->head;
-//     // //     if (!stack->top)
-//     // //     stack->top = n;
-//     // // n->next = stack->head;
-//     // // stack->head = n;
-//     // if (!empty_list(s) && only_elem(s))
-//     // {
-//     //     if (!s->top)
-//     //         s->top = n;
-//     //     n->next = s->head;
-//     //     s->head = n;
-//     // }
-//     while (tmp != NULL)
-//     {
-//         if (tmp->next == s->top)
-//         {
-//             s->top->next = n;
-//             s->top = n;
-//             break ;
-//         }
-//         tmp = tmp->next;
-//     }
-// }
+  tmp = l->head;
+  if (only_elem(l))
+  {
+    value = l->head;
+    l->head = NULL;
+    l->top= l->head;
+    return(value);
+  }
+  while (tmp != NULL)
+  {
+    if (tmp->next == l->top)
+    {
+      value = l->top;
+      tmp->next = NULL;
+      l->top = tmp;
+      break;
+           // return (value);
+       }  
+       tmp = tmp->next;
+      }
+        return (value);
+}
+
 void    addlast(t_list *s, t_node *n)
 {
   if(empty_list(s))
@@ -174,7 +117,6 @@ void    addlast(t_list *s, t_node *n)
      s->top = n;
   }
 }
-
 int	is_sorted(t_list *l)
 {
     t_node    *tmp;

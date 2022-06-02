@@ -6,17 +6,47 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 22:29:46 by aheddak           #+#    #+#             */
-/*   Updated: 2022/05/31 03:43:32 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/01 08:51:18 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// void    addlast_push(t_list *s, t_node *n)
+// {
+//   if(empty_list(s))
+//   {
+//    addfirst(s,n);
+//   }
+//   else
+//   {
+//      s->top->next = n;
+//      s->top = n;
+//   }
+// }
+void    addlast_p(t_list *s, t_node *n)
+{
+  if(empty_list(s))
+  {
+     
+ n->next = s->top; 
+    s->top = n;
+      s->head=s->top ;
+   
+    //n->next = s->top;
+   // s->top= NULL;
+  }
+  else
+  {
+   addfirst(s,n);
+//n =s->top;
+  }
+}
 void	push_a(t_list *a, t_list *b)
 {
 	if (!empty_list(b))
 	{
-		addlast(a, get_last(b));
+		addlast_p(a, get_last(b));
 		write(1, "pa\n", 3);
 	}
 }
@@ -25,7 +55,7 @@ void	push_b(t_list *a, t_list *b)
 {
 	if (!empty_list(a))
 	{
-		addlast(b, get_last(a));
+		addlast_p(b, get_last(a));
 		write(1, "pb\n", 3);
 	}
 }
