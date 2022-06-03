@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 03:04:13 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/02 02:11:44 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/03 07:08:36 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,29 @@
 
 void	addfirst(t_list *stack, t_node *n)//addlast
 {
-	if (!stack->top)
+	if (empty_list(stack))
+	{
 		stack->top = n;
-	n->next = stack->head;
-	stack->head = n;
-	
+		stack->head = stack->top;
+	}
+	else 
+	{
+		n->next = stack->head;
+		stack->head = n;
+	}	
 }
 
-t_list	*get_stack(int ac, char **av)
+t_list	*get_stack(int ac, char **av, t_list *stack)
 {
 	int		i;
 	int		j;
 	int		atoi;
-	char	**s_str;
-	t_list	*stack;
+	char	**s_str
 
 	i = 1;
+	// stack = malloc (sizeof(t_list));
+	// stack->top = NULL;
+	// stack->head = NULL;
 	while (i < ac)
 	{
 		j = 0;
@@ -85,18 +92,17 @@ void	afficherlist(t_list *s)
 
 int main(int ac, char *av[])
 {
-    t_list *a;
-    t_list *b;
-	int lsize;
+    t_list *stack_a;
+    t_list *stack_b;
 
-    a = creatlist();
-	b = creatlist();
+    stack_a = creatlist();
+	stack_b = creatlist();
     if(ac > 1)
     {
-        a = get_stack(ac, av);
-		ft_duplicates(a);
+        stack_a = get_stack(ac, av,stack_a);
+		ft_duplicates(stack_a);
 	
-	sort_lessten(a,b);
+	sort_lessten(stack_a,stack_b);
 
     }
 	//while (1);

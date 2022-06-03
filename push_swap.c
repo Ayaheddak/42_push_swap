@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 12:48:15 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/02 04:39:30 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/03 05:42:33 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,15 @@ void    sort_lessten(t_list *a, t_list *b)
     } 
 }
 
-void    sort_moreten(t_list *a, t_list *b)
-{
-    int lsize;
+// void    sort_moreten(t_list *a, t_list *b)
+// {
+//     int lsize;
 
-    lsize = get_lsize(a);
-    if (!is_sorted(a) && !only_elem(a) && !empty_list(a))
-    {
-        if (lsize > 10 && lsize <= 100)
-            sort_100(a, b);
+//     lsize = get_lsize(a);
+//     if (!is_sorted(a) && !only_elem(a) && !empty_list(a))
+//     {
+//         if (lsize > 10 && lsize <= 100)
+//             sort_100(a, b);
         
-    } 
-}
+//     } 
+// }

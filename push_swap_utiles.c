@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 22:22:44 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/02 02:16:01 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/03 07:09:28 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,40 +48,13 @@ int	only_elem(t_list *s)
 	return (0);
 }
 
-// t_node *get_last(t_list *l)
-// {
-//     t_node    *tmp;
-//     t_node    *value;
-
-//   //tmp = l->head;
-//   if( only_elem(l))
-//   {
-//       value = l->head;
-//     l->head = NULL;
-//     return(value);
-//   }
-//  else
-//   //while (tmp != NULL)
-//    //{
-//      // if (tmp->next == l->top)
-//      //  {
-//           {
-//               value = l->top;
-//             tmp->next = NULL;
-//             l->top = tmp;
-//             return (value);
-//           }  
-//      //  }
-//     // tmp = tmp->next;
-//  // }
-// }
-
 t_node *get_last(t_list *l)
 {
    t_node    *tmp;
    t_node    *value;
 
   tmp = l->head;
+  value = malloc(sizeof(t_node));
   if (only_elem(l))
   {
     value = l->head;
@@ -97,10 +70,9 @@ t_node *get_last(t_list *l)
       tmp->next = NULL;
       l->top = tmp;
       break;
-           // return (value);
-       }  
+    }  
        tmp = tmp->next;
-      }
+  }
         return (value);
 }
 

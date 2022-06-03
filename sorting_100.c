@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 02:23:18 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/02 08:13:42 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/03 06:03:40 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void sort_array2(int arr[],int n)
         i++;
     }
 }
-t_list *sort_100(t_list *a, t_list *b)
-{
-    return (a);
-}
+// t_list *sort_100(t_list *a, t_list *b)
+// {
+//     return (a);
+// }
