@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 03:04:13 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/03 07:08:36 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/03 07:12:11 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ t_list	*get_stack(int ac, char **av, t_list *stack)
 	int		i;
 	int		j;
 	int		atoi;
-	char	**s_str
+	char	**s_str;
 
 	i = 1;
 	// stack = malloc (sizeof(t_list));
@@ -90,20 +90,20 @@ void	afficherlist(t_list *s)
 	printf("---------- aywaaa salina -----------\n");
 }
 
-int main(int ac, char *av[])
-{
-    t_list *stack_a;
-    t_list *stack_b;
+// int main(int ac, char *av[])
+// {
+//     t_list *stack_a;
+//     t_list *stack_b;
 
-    stack_a = creatlist();
-	stack_b = creatlist();
-    if(ac > 1)
-    {
-        stack_a = get_stack(ac, av,stack_a);
-		ft_duplicates(stack_a);
+//     stack_a = creatlist();
+// 	stack_b = creatlist();
+//     if(ac > 1)
+//     {
+//         stack_a = get_stack(ac, av,stack_a);
+// 		ft_duplicates(stack_a);
 	
-	sort_lessten(stack_a,stack_b);
+// 	sort_lessten(stack_a,stack_b);
 
-    }
-	//while (1);
-}
+//     }
+// 	//while (1);
+// }

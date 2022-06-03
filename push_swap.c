@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 12:48:15 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/03 05:42:33 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/03 09:08:07 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void    sort_lessten(t_list *a, t_list *b)
             three_elements(a);
         else if (lsize > 3 && lsize <= 10)
             ten_elements(a,b);
+        // else if (lsize > 10 && lsize <= 100)
     } 
 }
 
@@ -55,3 +56,56 @@ void    sort_lessten(t_list *a, t_list *b)
         
 //     } 
 // }
+// int main(int ac, char *av[])
+// {
+//     t_list *stack_a;
+//     t_list *stack_b;
+
+//     stack_a = creatlist();
+// 	stack_b = creatlist();
+//     if(ac > 1)
+//     {
+//         stack_a = get_stack(ac, av,stack_a);
+// 		ft_duplicates(stack_a);
+	
+// 	sort_lessten(stack_a,stack_b);
+
+//     }
+// 	//while (1);
+// }
+int main(int ac, char *av[])
+{
+    t_list  *stack_a;
+    t_list  *stack_b;
+    int     *arr;
+    int     size;
+
+    stack_a = creatlist();
+	stack_b = creatlist();
+    if(ac > 1)
+    {
+        stack_a = get_stack(ac, av,stack_a);
+		ft_duplicates(stack_a);
+        afficherlist(stack_a);
+        size = get_lsize(stack_a);
+        arr = malloc(sizeof(int)*size);
+        copy_list_a(stack_a, arr);
+        sort_array(arr, size);
+        is_exit(stack_a,stack_b,arr);
+        afficherlist(stack_a);
+        afficherlist(stack_b);
+       // int toop;
+        //toop=is_top(arr,stack_a->top->data,size);
+       // printf("%d\n\n\n\n",toop); 
+    //     int i;
+    //     i = 0;
+    //     while(i<size)
+    //    {
+    //       printf("%d\n\n\n\n",arr[i]); 
+    //       i++;
+    //    } 
+	//sort_lessten(stack_a,stack_b);
+
+    }
+	//while (1);
+}

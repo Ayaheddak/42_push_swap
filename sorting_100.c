@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 02:23:18 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/03 06:03:40 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/03 09:08:53 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,29 +29,8 @@ int *copy_list_a(t_list *a, int arr[])
     //ft_free(a);
     return (arr);
 }
-/*-------------------Methode 1-------------------*/
-void sort_array(int arr[], int n)//n=sizeofstack
-{
-    int i;
-    int key;
-    int j;
 
-    i = 1;
-    while (i < n)
-    {
-        key = arr[i];
-        j = i -1;
-        while (j >= 0 && arr[j] > key)
-        {
-            arr[j + 1] = arr[j];
-            j = j - 1;
-        }
-        arr[j + 1] = key;
-        i++;
-    }
-}
-/*-------------------Methode 2 -------------------*/
-void sort_array2(int arr[],int n)
+void sort_array(int arr[],int n)//n sizeof arr "bubbleSort"
 {
     int i;
     int j;
@@ -75,7 +54,43 @@ void sort_array2(int arr[],int n)
         i++;
     }
 }
-// t_list *sort_100(t_list *a, t_list *b)
-// {
-//     return (a);
-// }
+
+int is_top(int *arr, int top, int n)
+{
+    int i;
+    int j;
+    
+    i = n/2 - 10;
+    j = i + 20;
+    while(i <= j)
+    {
+        if (arr[i] == top)
+            return (0);
+        i++;
+    }
+    return (1);
+}
+
+void is_exit(t_list *a, t_list *b, int *arr)
+{
+    if (is_top(arr, a->top->data, get_lsize(a)))
+        sorting_elements(a,b);
+    else
+        rotate_a(a);
+}
+
+t_list *sort_100(t_list *a, t_list *b, int *arr)
+{
+    int i;
+    int size;
+    int j;
+
+    size = get_lsize(a);
+    i = size - 20;
+    j = 0;
+    while(j<i)
+    {
+        is_exit(a,b,arr);
+    }
+    return(a);
+}

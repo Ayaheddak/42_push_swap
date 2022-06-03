@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 14:29:28 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/03 06:17:15 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/03 08:59:36 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_list
 	t_node	*head;
 	t_node	*top;
 }	t_list;
+
 int get_min(t_list *l);
 int get_index(t_list *l ,int n);
 char	**ft_split(char const *s, char c);
@@ -61,8 +62,15 @@ t_list	*conditions(t_list *l);
 int		get_lsize(t_list *l);
 t_list  *three_elements(t_list *a);
 void    sort_lessten(t_list *a, t_list *b);
-void	sorting_elements(t_list *a);
+void	sorting_elements(t_list *a, t_list *b);
 t_list	*ten_elements(t_list *a, t_list *b);
 void    ft_freelist(t_list *l);
+t_list	*get_stack(int ac, char **av, t_list *stack);
+void	ft_duplicates(t_list *a);
+int *copy_list_a(t_list *a, int arr[]);
+void sort_array(int arr[],int n);
+int is_top(int *arr, int top, int n);
+void is_exit(t_list *a, t_list *b, int *arr);
+t_list *sort_100(t_list *a, t_list *b, int *arr);
 
 #endif
