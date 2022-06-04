@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 22:29:46 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/03 05:46:37 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/04 05:02:44 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,10 @@ void    addlast_p(t_list *s, t_node *n)
   }
   else
   {
-   addfirst(s,n);
+  // addfirst(s,n);
+    s->top->next= n;
+  n->next=NULL;
+  s->top=n;
   }
 }
 void	push_a(t_list *a, t_list *b)

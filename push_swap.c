@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 12:48:15 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/03 09:08:07 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/04 13:10:30 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void    sort_lessten(t_list *a, t_list *b)
         else if (lsize > 3 && lsize <= 10)
             ten_elements(a,b);
         // else if (lsize > 10 && lsize <= 100)
+        //  sort_100(a,b,arr);
     } 
 }
 
@@ -77,8 +78,8 @@ int main(int ac, char *av[])
 {
     t_list  *stack_a;
     t_list  *stack_b;
-    int     *arr;
-    int     size;
+   int     *arr;
+  int     size;
 
     stack_a = creatlist();
 	stack_b = creatlist();
@@ -86,25 +87,26 @@ int main(int ac, char *av[])
     {
         stack_a = get_stack(ac, av,stack_a);
 		ft_duplicates(stack_a);
-        afficherlist(stack_a);
+        //afficherlist(stack_a);
         size = get_lsize(stack_a);
         arr = malloc(sizeof(int)*size);
         copy_list_a(stack_a, arr);
         sort_array(arr, size);
-        is_exit(stack_a,stack_b,arr);
-        afficherlist(stack_a);
-        afficherlist(stack_b);
-       // int toop;
-        //toop=is_top(arr,stack_a->top->data,size);
-       // printf("%d\n\n\n\n",toop); 
-    //     int i;
-    //     i = 0;
-    //     while(i<size)
-    //    {
-    //       printf("%d\n\n\n\n",arr[i]); 
-    //       i++;
-    //    } 
-	//sort_lessten(stack_a,stack_b);
+        // while (!is_sorted(stack_a))
+        sort_aywa(stack_a, stack_b,arr);
+        // afficherlist(stack_b);
+        // sort_100 (stack_a, stack_b, arr);
+      //sort_lessten(stack_a, stack_b);
+      // sorting_elements(stack_a, stack_b);
+       // sorting_elements(stack_a, stack_b);
+       //ten_elements(stack_a, stack_b);
+       //three_elements (stack_a);
+    // push_a(stack_a,stack_b);
+      //push_a(stack_a,stack_b);
+      //  sort_100(stack_a,stack_b,arr);
+        //sort_100(stack_a, stack_b,arr);
+    //   afficherlist(stack_b);
+// afficherlist(stack_a);
 
     }
 	//while (1);

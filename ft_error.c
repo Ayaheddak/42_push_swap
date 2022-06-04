@@ -6,24 +6,35 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 03:04:13 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/03 07:12:11 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/04 05:18:58 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	addfirst(t_list *stack, t_node *n)//addlast
+// void	addfirst(t_list *stack, t_node *n)//addlast
+// {
+// 	if (empty_list(stack))
+// 	{
+// 		stack->top = n;
+// 		stack->head = stack->top;
+// 	}
+// 	else 
+// 	{
+// 		n->next = stack->head;
+// 		stack->head = n;
+// 	}	
+// }
+void    addfirst(t_list *stack, t_node *n)//addlast
 {
-	if (empty_list(stack))
-	{
-		stack->top = n;
-		stack->head = stack->top;
-	}
-	else 
-	{
-		n->next = stack->head;
-		stack->head = n;
-	}	
+      if (!stack->top)
+      {
+        stack->top = n;
+        stack->head = stack->top;
+      }
+      else
+    n->next = stack->head;
+    stack->head = n;  
 }
 
 t_list	*get_stack(int ac, char **av, t_list *stack)
