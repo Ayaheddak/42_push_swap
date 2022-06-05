@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 12:48:15 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/05 17:22:27 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/05 18:52:13 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,15 +89,15 @@ int main(int ac, char *av[])
         stack_a = get_stack(ac, av,stack_a);
 		ft_duplicates(stack_a);
 // afficherlist(stack_a);
-        // size = get_lsize(stack_a);
-        // arr = malloc(sizeof(int)*size);
-        // copy_list_a(stack_a, arr);
-        //sort_array(arr, size);
+        size = get_lsize(stack_a);
+        arr = malloc(sizeof(int)*size);
+        copy_list_a(stack_a, arr);
+        sort_array(arr, size);
         // // while (!is_sorted(stack_a))
-        //sort_aywa(stack_a, stack_b,arr);
+        sort_aywa(stack_a, stack_b,arr);
         // afficherlist(stack_b);
         // sort_100 (stack_a, stack_b, arr);
-     sort_lessten(stack_a, stack_b);
+     //sort_lessten(stack_a, stack_b);
       // sorting_elements(stack_a, stack_b);
        // sorting_elements(stack_a, stack_b);
        //ten_elements(stack_a, stack_b);

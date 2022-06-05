@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 02:23:18 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/05 18:31:04 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/05 20:00:40 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,34 +53,100 @@ void sort_array(int arr[],int n)
     }
 }
 
-void rotate_elm(t_list *a, t_list *b , int index ,int *arr)
+void  rotate_elm(t_list *a, t_list *b , int index ,int *arr)//eeror
 {
     int proximity;
     int i;
     int pos;
     int size_b;
+    int r;
 
     proximity = (get_lsize(b) / 2); 
     i = 0;
+    r = 0;
     size_b = index + 1;
     while (index  >= 0)
     {
-        pos =get_index(b,arr[index]);
-        if(pos <= (size_b / 2))
+        
+         if (b->top->data == arr[index])
+         {
+              push_a(a,b) && my_putstr("pa");
+              size_b--;
+               index--;
+         }
+         /*prb hereeeeeeeeee */
+        else if (b && r==0)
         {
-             while ( b->top->data != arr[index])
-               rv_rotate(b)&& my_putstr("rrb");
+            push_a(a,b) && my_putstr("pa");
+            rotate(a) && my_putstr("ra"); 
+            size_b--;
+            r+=1;
         }
-       else if (pos > (size_b / 2))
-       {
-           while (b->top->data != arr[index])
-            rotate(b)&& my_putstr("rb");    
-       }
-        push_a(a,b) && my_putstr("pa");
-      size_b--;
-        index--;
+         else if (r != 0 && (a->head->data == b->top->data))
+        {
+            rv_rotate(a)&& my_putstr("rra");
+            index--;
+            r-=1;
+        }
+        else if (r != 0 && (a->head->data < b->top->data))
+        {
+                push_a(a,b) && my_putstr("pa");
+                rotate(a)&& my_putstr("ra"); 
+                size_b--;
+                r+=1;
+        }
+        /*-------------------------- */
+        else
+        {
+            pos =get_index(b,arr[index]);
+            if (pos <= (size_b / 2))
+            {
+                while ( b->top->data != arr[index])
+                    rv_rotate(b)&& my_putstr("rrb");
+                push_a(a,b) && my_putstr("pa");
+                index--;
+                size_b--;
+             }
+            else if (pos > (size_b / 2) )
+           {
+             while (b->top->data != arr[index])
+             {
+              rotate(b) && my_putstr("rb"); 
+            //  printf("size_b------------->%d\n",size_b);
+            //   printf("index------->%d\n",index);
+            //   printf("pos------->%d\n",pos);
+             }
+            push_a(a,b) && my_putstr("pa"); 
+                index--;
+               size_b--;  
+          }
+        }
+       
+        }
+    //  else 
+    //     {
+    //         rv_rotate(a)&& my_putstr("rra");
+    //         index--;
+    //         r-=1;
+    //     }
+       // }
+        
+    //     else if (pos <= (size_b / 2))
+    //     {
+    //          while ( b->top->data != arr[index])
+    //            rv_rotate(b)&& my_putstr("rrb");
+    //            push_a(a,b) && my_putstr("pa");
+    //     }
+    //    else if (pos > (size_b / 2))
+    //    {
+    //        while (b->top->data != arr[index])
+    //         rotate(b)&& my_putstr---- 
+    //         push_a(a,b) && my_putstr("pa");   
+    //    }
+        // push_a(a,b) && my_putstr("pa");
+     // size_b--;
+        // index--;
     }
-}
 void    sort_aywa(t_list *a, t_list *b, int *arr)
 {
     int key_nbr;
