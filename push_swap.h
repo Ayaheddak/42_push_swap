@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 14:29:28 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/04 04:19:40 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/05 15:51:17 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,26 +36,27 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strdup(const char *s1);
 size_t	ft_strlen(const char *s);
 int		ft_atoi_handle(char *str);
-void	swap_stack(t_list *s);
-void	swap_stack_a(t_list *a);
-void	swap_stack_b(t_list *b);
-void	swap_2_stacks(t_list *a, t_list *b);
+int	swap_stack(t_list *s);
+//void	swap_stack_a(t_list *a);
+//void	swap_stack_b(t_list *b);
+int		swap_2_stacks(t_list *a, t_list *b);
 t_node	*addnode(int value);
 t_list	*creatlist(void);
 int		empty_list(t_list *s);
 int		only_elem(t_list *s);
-void	rv_rotate_a(t_list *a);
-void	rv_rotate_b(t_list *b);
-void	rv_rotate_stackes(t_list *b, t_list *a);
+int	rv_rotate(t_list *a);
+ //void	rv_rotate_b(t_list *b);
+// void	rv_rotate_a(t_list *a);//
+int	rv_rotate_stackes(t_list *b, t_list *a);
 void	addfirst(t_list *stack, t_node *n);
 void	addfirst(t_list *stack, t_node *n);
-void	rotate_b(t_list *b);
-void	rotate_a(t_list *a);
-void	rotate_two_stackes(t_list *a, t_list *b);
+// void	rotate_b(t_list *b);
+int	rotate(t_list *a);
+int	rotate_two_stackes(t_list *a, t_list *b);
 t_node	*get_last(t_list *l);
 void	addlast(t_list *s, t_node *n);
-void	push_a(t_list *a, t_list *b);
-void	push_b(t_list *a, t_list *b);
+int	push_a(t_list *a, t_list *b);
+int	push_b(t_list *a, t_list *b);
 void	afficherlist(t_list *s);
 int		is_sorted(t_list *l);
 t_list	*conditions(t_list *l);
@@ -72,5 +73,6 @@ void	sort_array(int arr[],int n);
 int		is_top(int *arr, int top, int first, int last);
 void	sort_aywa(t_list *a, t_list *b, int *arr);
 t_list	*sort_100 (t_list *a, t_list *b, int *arr);
+int		my_putstr(char *s);
 
 #endif

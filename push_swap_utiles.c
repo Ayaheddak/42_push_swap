@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 22:22:44 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/04 06:43:41 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/05 12:57:52 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,10 @@ void    addlast(t_list *s, t_node *n)
 {
   if(empty_list(s))
   {
-    n->next = s->head;
+    // n->next = s->head;
+    // s->head = n;
     s->head = n;
+    s->top = s->head;
   }
   else
   {

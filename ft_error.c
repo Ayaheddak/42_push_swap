@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 03:04:13 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/04 05:18:58 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/05 13:31:41 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,6 @@ t_list	*get_stack(int ac, char **av, t_list *stack)
 	char	**s_str;
 
 	i = 1;
-	// stack = malloc (sizeof(t_list));
-	// stack->top = NULL;
-	// stack->head = NULL;
 	while (i < ac)
 	{
 		j = 0;

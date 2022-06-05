@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 12:48:15 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/04 13:10:30 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/05 17:22:27 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void    sort_lessten(t_list *a, t_list *b)
     if (!is_sorted(a) && !only_elem(a) && !empty_list(a))
     {
         if (lsize == 2)
-           swap_stack_a(a);
+           swap_stack(a)&& !my_putstr("sa");
         else if (lsize == 3)
             three_elements(a);
         else if (lsize > 3 && lsize <= 10)
@@ -74,6 +74,7 @@ void    sort_lessten(t_list *a, t_list *b)
 //     }
 // 	//while (1);
 // }
+
 int main(int ac, char *av[])
 {
     t_list  *stack_a;
@@ -87,16 +88,16 @@ int main(int ac, char *av[])
     {
         stack_a = get_stack(ac, av,stack_a);
 		ft_duplicates(stack_a);
-        //afficherlist(stack_a);
-        size = get_lsize(stack_a);
-        arr = malloc(sizeof(int)*size);
-        copy_list_a(stack_a, arr);
-        sort_array(arr, size);
-        // while (!is_sorted(stack_a))
-        sort_aywa(stack_a, stack_b,arr);
+// afficherlist(stack_a);
+        // size = get_lsize(stack_a);
+        // arr = malloc(sizeof(int)*size);
+        // copy_list_a(stack_a, arr);
+        //sort_array(arr, size);
+        // // while (!is_sorted(stack_a))
+        //sort_aywa(stack_a, stack_b,arr);
         // afficherlist(stack_b);
         // sort_100 (stack_a, stack_b, arr);
-      //sort_lessten(stack_a, stack_b);
+     sort_lessten(stack_a, stack_b);
       // sorting_elements(stack_a, stack_b);
        // sorting_elements(stack_a, stack_b);
        //ten_elements(stack_a, stack_b);
@@ -105,7 +106,7 @@ int main(int ac, char *av[])
       //push_a(stack_a,stack_b);
       //  sort_100(stack_a,stack_b,arr);
         //sort_100(stack_a, stack_b,arr);
-    //   afficherlist(stack_b);
+   //  afficherlist(stack_a);
 // afficherlist(stack_a);
 
     }
