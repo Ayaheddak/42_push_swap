@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 02:23:18 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/05 20:00:40 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/07 10:55:34 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,21 +68,21 @@ void  rotate_elm(t_list *a, t_list *b , int index ,int *arr)//eeror
     while (index  >= 0)
     {
         
-         if (b->top->data == arr[index])
+         if (b->top && b->top->data == arr[index])
          {
               push_a(a,b) && my_putstr("pa");
               size_b--;
                index--;
          }
          /*prb hereeeeeeeeee */
-        else if (b && r==0)
+        else if (b->top && r==0)
         {
             push_a(a,b) && my_putstr("pa");
             rotate(a) && my_putstr("ra"); 
             size_b--;
             r+=1;
         }
-         else if (r != 0 && (a->head->data == b->top->data))
+         else if (r != 0 && a->head && (a->head->data == arr[index]))
         {
             rv_rotate(a)&& my_putstr("rra");
             index--;
@@ -156,10 +156,11 @@ void    sort_aywa(t_list *a, t_list *b, int *arr)
     int key;
     int first;
     int last;
-
+//if 500 -> size/15
+//if 500 -> size/5
     size = get_lsize(a);
     middle = size/2;//50
-    key_nbr = size/15;// chunk size
+    key_nbr = size/5;// chunk size
     key = key_nbr;
 	size_b = 0;
     first = middle - key;
