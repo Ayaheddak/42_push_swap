@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 03:04:13 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/05 13:31:41 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/09 08:51:36 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	ft_duplicates(t_list *a)
 		{	
 			if (tmp->data == b->data)
 			{
-				write (1, "Error\n", 6);
+				write (2, "Error\n", 6);
 				exit(1);
 			}
 			b = b->next;

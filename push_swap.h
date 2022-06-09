@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 14:29:28 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/05 15:51:17 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/09 12:06:41 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include   <stdio.h>
 # include   <stdlib.h>
 # include   <unistd.h>
+# include	"gnl/get_next_line.h"
 
 typedef struct s_node
 {
@@ -29,24 +30,20 @@ typedef struct s_list
 	t_node	*top;
 }	t_list;
 
-int get_min(t_list *l);
-int get_index(t_list *l ,int n);
+int 	get_min(t_list *l);
+int 	get_index(t_list *l ,int n);
 char	**ft_split(char const *s, char c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strdup(const char *s1);
 size_t	ft_strlen(const char *s);
 int		ft_atoi_handle(char *str);
-int	swap_stack(t_list *s);
-//void	swap_stack_a(t_list *a);
-//void	swap_stack_b(t_list *b);
+int		swap_stack(t_list *s);
 int		swap_2_stacks(t_list *a, t_list *b);
 t_node	*addnode(int value);
 t_list	*creatlist(void);
 int		empty_list(t_list *s);
 int		only_elem(t_list *s);
 int	rv_rotate(t_list *a);
- //void	rv_rotate_b(t_list *b);
-// void	rv_rotate_a(t_list *a);//
 int	rv_rotate_stackes(t_list *b, t_list *a);
 void	addfirst(t_list *stack, t_node *n);
 void	addfirst(t_list *stack, t_node *n);

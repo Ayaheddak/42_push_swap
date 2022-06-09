@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 01:00:54 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/01 02:28:52 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/09 08:51:28 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	check_digits(char *av, int i)
 
 int	ft_error(void)
 {
-	write (1, "Error\n", 6);
+	write (2, "Error\n", 6);
 	exit(1);
 }
 

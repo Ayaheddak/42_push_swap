@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 02:23:18 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/07 10:55:34 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/09 08:37:51 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ void  rotate_elm(t_list *a, t_list *b , int index ,int *arr)//eeror
               size_b--;
                index--;
          }
-         /*prb hereeeeeeeeee */
         else if (b->top && r==0)
         {
             push_a(a,b) && my_putstr("pa");
@@ -95,7 +94,6 @@ void  rotate_elm(t_list *a, t_list *b , int index ,int *arr)//eeror
                 size_b--;
                 r+=1;
         }
-        /*-------------------------- */
         else
         {
             pos =get_index(b,arr[index]);
@@ -157,7 +155,8 @@ void    sort_aywa(t_list *a, t_list *b, int *arr)
     int first;
     int last;
 //if 500 -> size/15
-//if 500 -> size/5
+//if 100 -> size/5
+// if 5 ->size/3;
     size = get_lsize(a);
     middle = size/2;//50
     key_nbr = size/5;// chunk size

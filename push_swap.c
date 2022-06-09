@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 12:48:15 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/05 18:52:13 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/09 13:03:10 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,40 +75,37 @@ void    sort_lessten(t_list *a, t_list *b)
 // 	//while (1);
 // }
 
-int main(int ac, char *av[])
-{
-    t_list  *stack_a;
-    t_list  *stack_b;
-   int     *arr;
-  int     size;
 
-    stack_a = creatlist();
-	stack_b = creatlist();
-    if(ac > 1)
-    {
-        stack_a = get_stack(ac, av,stack_a);
-		ft_duplicates(stack_a);
-// afficherlist(stack_a);
-        size = get_lsize(stack_a);
-        arr = malloc(sizeof(int)*size);
-        copy_list_a(stack_a, arr);
-        sort_array(arr, size);
-        // // while (!is_sorted(stack_a))
-        sort_aywa(stack_a, stack_b,arr);
-        // afficherlist(stack_b);
-        // sort_100 (stack_a, stack_b, arr);
-     //sort_lessten(stack_a, stack_b);
-      // sorting_elements(stack_a, stack_b);
-       // sorting_elements(stack_a, stack_b);
-       //ten_elements(stack_a, stack_b);
-       //three_elements (stack_a);
-    // push_a(stack_a,stack_b);
-      //push_a(stack_a,stack_b);
-      //  sort_100(stack_a,stack_b,arr);
-        //sort_100(stack_a, stack_b,arr);
-   //  afficherlist(stack_a);
-// afficherlist(stack_a);
+// int main(int ac, char *av[])
+// {
+//     t_list  *stack_a;
+//     t_list  *stack_b;
+//     char *line;
+//  //  int     *arr;
+//   //int     size;
 
-    }
-	//while (1);
-}
+//     stack_a = creatlist();
+// 	stack_b = creatlist();
+//     if(ac > 1)
+//     {
+//         stack_a = get_stack(ac, av,stack_a);
+// 		ft_duplicates(stack_a);
+//  //afficherlist(stack_a);
+//      //   size = get_lsize(stack_a);
+//      //   arr = malloc(sizeof(int)*size);
+//       //  copy_list_a(stack_a, arr);
+//       //  sort_array(arr, size);
+//         ten_elements(stack_a, stack_b);
+//         // // while (!is_sorted(stack_a))
+//     //    sort_aywa(stack_a, stack_b,arr);
+//         // afficherlist(stack_b);
+//         // sort_100 (stack_a, stack_b, arr);
+//      //sort_lessten(stack_a, stack_b);
+//        //ten_elements(stack_a, stack_b);
+//        //three_elements (stack_a);
+  
+//    // afficherlist(stack_a);
+
+//     }
+// 	//while (1);
+// }
