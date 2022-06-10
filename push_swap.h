@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 14:29:28 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/09 12:06:41 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/10 13:43:11 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int		is_sorted(t_list *l);
 t_list	*conditions(t_list *l);
 int		get_lsize(t_list *l);
 t_list  *three_elements(t_list *a);
-void    sort_lessten(t_list *a, t_list *b);
+void    sort_lessten(t_list *a, t_list *b , int *arr);
 void	sorting_elements(t_list *a,t_list *b);
 t_list	*ten_elements(t_list *a, t_list *b);
 void    ft_freelist(t_list *l);

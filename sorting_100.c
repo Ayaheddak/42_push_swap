@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 02:23:18 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/09 08:37:51 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/10 15:05:43 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,12 +108,7 @@ void  rotate_elm(t_list *a, t_list *b , int index ,int *arr)//eeror
             else if (pos > (size_b / 2) )
            {
              while (b->top->data != arr[index])
-             {
-              rotate(b) && my_putstr("rb"); 
-            //  printf("size_b------------->%d\n",size_b);
-            //   printf("index------->%d\n",index);
-            //   printf("pos------->%d\n",pos);
-             }
+              rotate(b) && my_putstr("rb");
             push_a(a,b) && my_putstr("pa"); 
                 index--;
                size_b--;  
@@ -164,9 +159,7 @@ void    sort_aywa(t_list *a, t_list *b, int *arr)
 	size_b = 0;
     first = middle - key;
     last = middle + key;
-    int i;
-    i = 1;
-    while(i)
+    while(1)
     {
         if (size_b == size - 3)
              break; 
@@ -194,7 +187,7 @@ void    sort_aywa(t_list *a, t_list *b, int *arr)
     }
     if(!is_sorted(a))
         three_elements(a);
-    rotate_elm(a,b,size -4,arr);
+    rotate_elm(a,b,size - 4,arr);
 }
 
 int my_putstr(char *s)

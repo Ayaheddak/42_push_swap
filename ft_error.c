@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 03:04:13 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/09 08:51:36 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/10 16:56:57 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,10 @@ t_list	*get_stack(int ac, char **av, t_list *stack)
 		{
 			atoi = ft_atoi_handle(s_str[j]);
 			addfirst(stack, addnode(atoi));
+			free(s_str[j]);
 			j++;
 		}
-		free(s_str[j]);
+		free(s_str);
 		i++;
 	}
 	return (stack);

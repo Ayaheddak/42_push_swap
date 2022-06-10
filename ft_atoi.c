@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 01:00:54 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/09 08:51:28 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/10 16:13:02 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_atoi_handle(char *av)
 	int		c;
 	long	res;
 	int		cmp;
-
+	
 	c = 0;
 	res = 0;
 	cmp = 1;

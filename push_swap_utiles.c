@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 22:22:44 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/09 11:18:12 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/10 16:35:02 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ t_node *get_last(t_list *l)
    t_node    *value;
 
   tmp = l->head;
-  value = malloc(sizeof(t_node));
   if (only_elem(l))
   {
     value = l->head;
