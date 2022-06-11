@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 02:28:13 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/05 17:49:38 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/11 05:58:04 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,15 +48,13 @@ int	get_min(t_list *l)
 void	sorting_elements(t_list *a, t_list *b)
 {
 	int	index_min;
-	int	proximity;
 	int	i;
 
 	i = 0;
 	index_min = get_index(a, get_min(a));
-	proximity = (get_lsize(a) / 2);
 	if (!is_sorted(a))
 	{
-		if (proximity > index_min)
+		if ((get_lsize(a) / 2) > index_min)
 		{
 			while (i < index_min + 1)
 			{
@@ -71,7 +69,7 @@ void	sorting_elements(t_list *a, t_list *b)
 				(rotate(a) && my_putstr("ra"));
 				i++;
 			}
-		}   
+		}
 	}
 	(push_b(a, b) && my_putstr("pb"));
 }

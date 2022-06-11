@@ -6,201 +6,115 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 02:23:18 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/10 15:05:43 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/11 10:21:50 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int *copy_list_a(t_list *a, int arr[])
+int	inc_norm(t_incs *incs, int type)
 {
-    int     i;
-    t_node  *tmp;
-
-    i = 0;
-    tmp = a->head;
-    while (tmp != NULL)
-    {
-        arr[i] = tmp->data;
-        tmp = tmp->next;
-        i++;
-    }
-    return (arr);
+	if (type == 0)
+	{
+		incs->size_b -= 1;
+		incs->index -= 1;
+	}
+	else if (type == 1)
+	{
+		incs->index -= 1;
+		incs->r -= 1;
+	}
+	else if (type == 2)
+	{
+		incs->size_b -= 1;
+		incs->r += 1;
+	}
+	return (1);
 }
 
-void sort_array(int arr[],int n)
+void	cond_b(t_list *a, t_list *b, t_incs *incs, int *arr)
 {
-    int i;
-    int j;
-    int tmp;
+	int	pos;
 
-    i = 0;
-    tmp = 0;
-    while (i < n)
-    {
-        j = i+1;
-        while(j < n)
-        {
-            if(arr[i] > arr[j])
-            {
-                tmp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = tmp;
-            }
-            j++;
-        }
-        i++;
-    }
+	pos = get_index(b, arr[incs->index]);
+	if (pos <= (incs->size_b / 2))
+	{
+		while (b->top->data != arr[incs->index])
+			(rv_rotate(b) && my_putstr("rrb"));
+		(push_a(a, b) && my_putstr("pa") && inc_norm(incs, 0));
+	}
+	else if (pos > (incs->size_b / 2))
+	{
+		while (b->top->data != arr[incs->index])
+			(rotate(b) && my_putstr("rb"));
+		(push_a(a, b) && my_putstr("pa") && inc_norm(incs, 0));
+	}
 }
 
-void  rotate_elm(t_list *a, t_list *b , int index ,int *arr)//eeror
+void	send_b_to_a(t_list *a, t_list *b, int index, int *arr)
 {
-    int proximity;
-    int i;
-    int pos;
-    int size_b;
-    int r;
+	t_incs	incs;
 
-    proximity = (get_lsize(b) / 2); 
-    i = 0;
-    r = 0;
-    size_b = index + 1;
-    while (index  >= 0)
-    {
-        
-         if (b->top && b->top->data == arr[index])
-         {
-              push_a(a,b) && my_putstr("pa");
-              size_b--;
-               index--;
-         }
-        else if (b->top && r==0)
-        {
-            push_a(a,b) && my_putstr("pa");
-            rotate(a) && my_putstr("ra"); 
-            size_b--;
-            r+=1;
-        }
-         else if (r != 0 && a->head && (a->head->data == arr[index]))
-        {
-            rv_rotate(a)&& my_putstr("rra");
-            index--;
-            r-=1;
-        }
-        else if (r != 0 && (a->head->data < b->top->data))
-        {
-                push_a(a,b) && my_putstr("pa");
-                rotate(a)&& my_putstr("ra"); 
-                size_b--;
-                r+=1;
-        }
-        else
-        {
-            pos =get_index(b,arr[index]);
-            if (pos <= (size_b / 2))
-            {
-                while ( b->top->data != arr[index])
-                    rv_rotate(b)&& my_putstr("rrb");
-                push_a(a,b) && my_putstr("pa");
-                index--;
-                size_b--;
-             }
-            else if (pos > (size_b / 2) )
-           {
-             while (b->top->data != arr[index])
-              rotate(b) && my_putstr("rb");
-            push_a(a,b) && my_putstr("pa"); 
-                index--;
-               size_b--;  
-          }
-        }
-       
-        }
-    //  else 
-    //     {
-    //         rv_rotate(a)&& my_putstr("rra");
-    //         index--;
-    //         r-=1;
-    //     }
-       // }
-        
-    //     else if (pos <= (size_b / 2))
-    //     {
-    //          while ( b->top->data != arr[index])
-    //            rv_rotate(b)&& my_putstr("rrb");
-    //            push_a(a,b) && my_putstr("pa");
-    //     }
-    //    else if (pos > (size_b / 2))
-    //    {
-    //        while (b->top->data != arr[index])
-    //         rotate(b)&& my_putstr---- 
-    //         push_a(a,b) && my_putstr("pa");   
-    //    }
-        // push_a(a,b) && my_putstr("pa");
-     // size_b--;
-        // index--;
-    }
-void    sort_aywa(t_list *a, t_list *b, int *arr)
-{
-    int key_nbr;
-    int size;
-	int size_b;
-    int middle;
-    int key;
-    int first;
-    int last;
-//if 500 -> size/15
-//if 100 -> size/5
-// if 5 ->size/3;
-    size = get_lsize(a);
-    middle = size/2;//50
-    key_nbr = size/5;// chunk size
-    key = key_nbr;
-	size_b = 0;
-    first = middle - key;
-    last = middle + key;
-    while(1)
-    {
-        if (size_b == size - 3)
-             break; 
-        if (a->top->data > arr[size - 3])
-            rotate(a)&& my_putstr("ra");
-        else if (a->top->data >= arr[first] && a->top->data <= arr[last])
-        {
-            push_b(a,b)&& my_putstr("pb");
-            if (b->top->data < arr[middle])
-                rotate(b)&& my_putstr("rb");
-            size_b++;
-		}
-        else
-            rotate(a)&& !my_putstr("ra");
-        if (size_b == (last - first) + 1)
-        {
-            first -= key;
-            last += key;
-        }
-        if ((first < 0 || last > (size - 4)))
-        {
-            first = 0;
-            last = size - 4;
-        }
-    }
-    if(!is_sorted(a))
-        three_elements(a);
-    rotate_elm(a,b,size - 4,arr);
+	incs.r = 0;
+	incs.size_b = index + 1;
+	incs.index = index;
+	while (index >= 0)
+	{
+		if (b->top && b->top->data == arr[incs.index])
+			(push_a(a, b) && my_putstr("pa") && inc_norm(&incs, 0));
+		else if (incs.r != 0 && a->head && (a->head->data == arr[incs.index]))
+			(rv_rotate(a) && my_putstr("rra") && inc_norm(&incs, 1));
+		else if ((incs.r != 0 && (a->head->data < b->top->data))
+			|| (b->top && incs.r == 0))
+			(push_a(a, b) && my_putstr("pa") && rotate(a) && my_putstr("ra")
+				&& inc_norm(&incs, 2));
+		else
+			cond_b(a, b, &incs, arr);
+	}
 }
 
-int my_putstr(char *s)
+void	cond_a(t_args *args, t_list *a, t_list *b, int *arr)
 {
-    int i;
+	if (a->top->data > arr[args->size - 3])
+		(rotate(a) && my_putstr("ra"));
+	else if (a->top->data >= arr[args->first]
+		&& a->top->data <= arr[args->last])
+	{
+		(push_b(a, b) && my_putstr("pb"));
+		if (b->top->data < arr[(args->size / 2)])
+			(rotate(b) && my_putstr("rb"));
+		args->size_b++;
+	}
+	else
+		(rotate(a) && my_putstr("ra"));
+	if (args->size_b == (args->last - args->first) + 1)
+	{
+		args->first -= args->key;
+		args->last += args->key;
+	}
+	if ((args->first < 0 || args->last > (args->size - 4)))
+	{
+		args->first = 0;
+		args->last = args->size - 4;
+	}
+}
 
-    i = 0;
-    if (!s)
-        return(0);
-    while(s[i] != '\0')
-    {
-        write (1, &s[i], 1);
-        i++;
-    }
-   return( write(1, "\n", 1));// il return 1 bc write 1 is succ
+void	send_a_to_b(t_list *a, t_list *b, int *arr, int key_nbr )
+{
+	t_args	args;
+
+	args.size = get_lsize(a);
+	args.key = key_nbr;
+	args.size_b = 0;
+	args.first = (args.size / 2) - args.key;
+	args.last = (args.size / 2) + args.key;
+	while (1)
+	{
+		if (args.size_b == args.size - 3)
+			break ;
+		cond_a(&args, a, b, arr);
+	}
+	if (!is_sorted(a))
+		three_elements(a);
+	send_b_to_a(a, b, args.size - 4, arr);
 }

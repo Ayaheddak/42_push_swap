@@ -6,11 +6,39 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 22:29:46 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/05 16:57:28 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/11 10:48:41 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+t_node	*get_last(t_list *l)
+{
+	t_node	*tmp;
+	t_node	*value;
+
+	value = NULL;
+	tmp = l->head;
+	if (only_elem(l))
+	{
+		value = l->head;
+		l->head = NULL;
+		l->top = l->head;
+		return (value);
+	}
+	while (tmp != NULL)
+	{
+		if (tmp->next == l->top)
+		{
+			value = l->top;
+			tmp->next = NULL;
+			l->top = tmp;
+			break ;
+		}
+		tmp = tmp->next;
+	}
+	return (value);
+}
 
 void	addlast_p(t_list *s, t_node *n)
 {

@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 22:22:44 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/10 16:35:02 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/11 06:23:28 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,61 +48,18 @@ int	only_elem(t_list *s)
 	return (0);
 }
 
-t_node *get_last(t_list *l)
-{
-   t_node    *tmp;
-   t_node    *value;
-
-  tmp = l->head;
-  if (only_elem(l))
-  {
-    value = l->head;
-    l->head = NULL;
-    l->top= l->head;
-    return(value);
-  }
-  while (tmp != NULL)
-  {
-    if (tmp->next == l->top)
-    {
-      value = l->top;
-      tmp->next = NULL;
-      l->top = tmp;
-      break;
-    }  
-       tmp = tmp->next;
-  }
-        return (value);
-}
-
-void    addlast(t_list *s, t_node *n)
-{
-  if(empty_list(s))
-  {
-    // n->next = s->head;
-    // s->head = n;
-    s->head = n;
-    s->top = s->head;
-  }
-  else
-  {
-     s->top->next = n;
-     s->top = n;
-  }
-}
-
 int	is_sorted(t_list *l)
 {
-    t_node    *tmp;
+	t_node	*tmp;
 
-    tmp = l->head;
-    if (empty_list(l))
-        return (0);
-    while (tmp->next != NULL)
-    {
-        if (tmp->data < tmp->next->data)
-            return(0);
-        tmp = tmp->next;
-    }
-    return (1);
+	tmp = l->head;
+	if (empty_list(l))
+		return (0);
+	while (tmp->next != NULL)
+	{
+		if (tmp->data < tmp->next->data)
+			return (0);
+		tmp = tmp->next;
+	}
+	return (1);
 }

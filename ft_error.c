@@ -6,35 +6,24 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 03:04:13 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/10 16:56:57 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/11 06:35:27 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void	addfirst(t_list *stack, t_node *n)//addlast
-// {
-// 	if (empty_list(stack))
-// 	{
-// 		stack->top = n;
-// 		stack->head = stack->top;
-// 	}
-// 	else 
-// 	{
-// 		n->next = stack->head;
-// 		stack->head = n;
-// 	}	
-// }
-void    addfirst(t_list *stack, t_node *n)//addlast
+void	addfirst(t_list *stack, t_node *n)
 {
-      if (!stack->top)
-      {
-        stack->top = n;
-        stack->head = stack->top;
-      }
-      else
-    n->next = stack->head;
-    stack->head = n;  
+	if (!stack->top)
+	{
+		stack->top = n;
+		stack->head = stack->top;
+	}
+	else
+	{
+		n->next = stack->head;
+		stack->head = n;
+	}
 }
 
 t_list	*get_stack(int ac, char **av, t_list *stack)
@@ -84,35 +73,15 @@ void	ft_duplicates(t_list *a)
 	}
 }
 
-void	afficherlist(t_list *s)
+void	ft_freelist(t_list *l)
 {
 	t_node	*tmp;
 
-	tmp = s->head;
-	printf("---------- aywaaa bdina -----------\n");
-	while (tmp != NULL)
+	while (l->head != NULL)
 	{
-		printf("%d\n ", tmp->data);
-		tmp = tmp->next;
+		tmp = l->head;
+		l->head = l->head->next;
+		free (tmp);
 	}
-	printf("\n");
-	printf("---------- aywaaa salina -----------\n");
+	free (l);
 }
-
-// int main(int ac, char *av[])
-// {
-//     t_list *stack_a;
-//     t_list *stack_b;
-
-//     stack_a = creatlist();
-// 	stack_b = creatlist();
-//     if(ac > 1)
-//     {
-//         stack_a = get_stack(ac, av,stack_a);
-// 		ft_duplicates(stack_a);
-	
-// 	sort_lessten(stack_a,stack_b);
-
-//     }
-// 	//while (1);
-// }

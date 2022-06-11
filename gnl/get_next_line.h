@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 02:50:09 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/09 12:03:56 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/11 10:56:03 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <fcntl.h>
 
-#define BUFFER_SIZE 1
+# define BUFFER_SIZE 1
 
 char	*get_next_line(int fd);
 size_t	ft_strlenn(const char *s);
