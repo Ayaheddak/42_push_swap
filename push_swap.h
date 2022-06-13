@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 14:29:28 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/11 10:55:05 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/13 23:43:09 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,19 @@ typedef struct s_list
 
 typedef struct s_incs
 {
-	int	size_b;
-	int	index;
-	int	r;
+	int index;
+	int *arr;
+	int r;
 }			t_incs;
 
 typedef struct s_args
 {
-	int	size;
-	int	size_b;
-	int	key;
-	int	first;
-	int	last;
+	int first;
+	int last;
+	int middle;
+	int size;
+	int size_b;
+	int key;
 }			t_args;
 
 int		get_index(t_list *l, int n);
@@ -70,7 +71,7 @@ int		push_b(t_list *a, t_list *b);
 int		is_sorted(t_list *l);
 int		get_lsize(t_list *l);
 t_list	*three_elements(t_list *a);
-void	conditions(t_list *a, t_list *b, int *arr);
+void	conditions(t_list *a, t_list *b, t_incs *incs);
 void	sorting_elements(t_list *a, t_list *b);
 t_list	*ten_elements(t_list *a, t_list *b);
 void	ft_freelist(t_list *l);
@@ -78,7 +79,7 @@ t_list	*get_stack(int ac, char **av, t_list *stack);
 void	ft_duplicates(t_list *a);
 int		*copy_list_a(t_list *a, int arr[]);//ft att
 void	sort_array(int arr[], int n);
-void	send_a_to_b(t_list *a, t_list *b, int *arr, int key_nbr);
+void	send_a_to_b(t_list *a, t_list *b, t_incs *incs, int key_nbr);
 int		my_putstr(char *s);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 10:43:23 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/11 10:55:43 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/13 23:29:44 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	get_lsize(t_list *l)
 	return (len);
 }
 
-void	conditions(t_list *a, t_list *b, int *arr)
+void	conditions(t_list *a, t_list *b, t_incs *incs)
 {
 	int		lsize;
 
@@ -82,8 +82,8 @@ void	conditions(t_list *a, t_list *b, int *arr)
 		else if (lsize > 3 && lsize <= 10)
 			ten_elements(a, b);
 		else if (lsize > 10 && lsize <= 100)
-			send_a_to_b(a, b, arr, (lsize / 5));
+			send_a_to_b(a, b, incs, (lsize / 5));
 		else if (lsize > 100 && lsize <= 500)
-			send_a_to_b(a, b, arr, (lsize / 15));
+			send_a_to_b(a, b, incs, (lsize / 15));
 	}
 }

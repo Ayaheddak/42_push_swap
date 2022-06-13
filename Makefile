@@ -6,7 +6,7 @@
 #    By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/26 00:28:38 by aheddak           #+#    #+#              #
-#    Updated: 2022/06/11 10:56:56 by aheddak          ###   ########.fr        #
+#    Updated: 2022/06/11 10:58:28 by aheddak          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,4 +45,3 @@ fclean : clean
 	${RM} ${NAME} ${BONUS}
 
 re : fclean all
-
