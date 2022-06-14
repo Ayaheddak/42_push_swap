@@ -6,40 +6,42 @@
 #    By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/26 00:28:38 by aheddak           #+#    #+#              #
-#    Updated: 2022/06/11 10:58:28 by aheddak          ###   ########.fr        #
+#    Updated: 2022/06/14 23:12:42 by aheddak          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME    =    push_swap
+NAME	=	push_swap
 
-BONUS	= 	 checker
+BONUS	=	checker
 
-UTILS =  ft_atoi.c ft_error.c ft_split.c ft_strdup.c ft_strlen.c ft_substr.c push.c push_swap_utiles.c rotate.c rv_rotate.c sorting_100.c sorting_ten.c sorting_three.c swap.c conditions.c
+UTILS	=	ft_atoi.c ft_error.c ft_split.c ft_strdup.c ft_strlen.c ft_substr.c push.c push_swap_utiles.c rotate.c rv_rotate.c sorting_100.c\
+			sorting_ten.c sorting_three.c swap.c conditions.c push_swap.c
 
-GNL = gnl/get_next_line.c gnl/get_next_line_utils.c
+UTILS_BONUS	=	gnl/get_next_line.c gnl/get_next_line_utils.c ft_atoi.c ft_error.c ft_split.c ft_strdup.c ft_strlen.c checker.c \
+				ft_substr.c push.c push_swap_utiles.c rotate.c rv_rotate.c sorting_100.c sorting_ten.c sorting_three.c swap.c conditions.c
 
-SRCS    =   push_swap.c 
+FLAGS	=	-Wall -Wextra -Werror
 
-SRCS_BONUS =  checker.c 
+OBJCT	=	${UTILS:.c=.o}
 
-FLAGS    =    -Wall -Wextra -Werror
+OBJCTB	=	${UTILS_BONUS:.c=.o}
 
-RM        =    rm -f
+RM		=	rm -f
 
-CC        =    gcc
+CC		=	gcc
 
-all : $(NAME)
+all		:	$(NAME)
 
-$(NAME) :
-	$(CC) $(FLAGS) $(SRCS) $(UTILS) -o $(NAME)
+$(NAME)	:	$(OBJCT)	
+	$(CC) $(FLAGS) $(UTILS) -o $(NAME)
 
 bonus : $(BONUS)
 
-$(BONUS) :
-	$(CC)  $(FLAGS) $(SRCS_BONUS) $(UTILS) $(GNL) -o $(BONUS)
+$(BONUS) : $(OBJCTB)
+	$(CC) $(FLAGS) $(UTILS_BONUS) -o $(BONUS)
 
 clean :
-	${RM} ${NAME}
+	${RM} $(OBJCT) $(OBJCTB)
 
 fclean : clean
 	${RM} ${NAME} ${BONUS}

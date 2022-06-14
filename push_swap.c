@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 12:48:15 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/14 03:03:41 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/14 22:39:03 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,5 @@ int	main(int ac, char *av[])
 		sort_array(incs.arr, size);
 		conditions(stack_a, stack_b, &incs);
 		free (incs.arr);
-		ft_freelist (stack_a);
-		ft_freelist (stack_b);
 	}
 }
