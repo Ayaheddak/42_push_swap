@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 14:29:28 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/13 23:43:09 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/14 01:59:22 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,20 +32,20 @@ typedef struct s_list
 
 typedef struct s_incs
 {
-	int index;
-	int *arr;
-	int r;
-}			t_incs;
+	int	index;
+	int	*arr;
+	int	r;
+}	t_incs;
 
 typedef struct s_args
 {
-	int first;
-	int last;
-	int middle;
-	int size;
-	int size_b;
-	int key;
-}			t_args;
+	int	first;
+	int	last;
+	int	middle;
+	int	size;
+	int	size_b;
+	int	key;
+}	t_args;
 
 int		get_index(t_list *l, int n);
 char	**ft_split(char const *s, char c);

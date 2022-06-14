@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 12:48:15 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/13 23:32:56 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/14 03:03:41 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int	main(int ac, char *av[])
 	t_incs	incs;
 	int		size;
 
-	//incs = NULL;
 	if (ac > 1)
 	{
 		stack_a = creatlist();

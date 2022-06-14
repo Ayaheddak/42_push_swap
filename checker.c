@@ -6,10 +6,11 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 10:21:31 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/13 23:48:22 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/14 03:02:36 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 #include "push_swap.h"
 
 int	ft_strcmp(const char *s1, const char *s2)
@@ -24,7 +25,7 @@ int	ft_strcmp(const char *s1, const char *s2)
 
 void	ft_err(void)
 {
-	write (2, "Error \n", 8);
+	write (2, "Error\n", 6);
 	exit (0);
 }
 
@@ -71,13 +72,11 @@ int	main(int ac, char *av[])
 	while (line)
 	{
 		cond_checker(line, stack_a, stack_b);
-		free (line);
+		free(line);
 		line = get_next_line(0);
 	}
 	if (is_sorted(stack_a) && empty_list(stack_b))
-		write(1, "OK\n", 4);
+		write(1, "OK\n", 3);
 	else
-		write (1, "KO\n", 4);
-	ft_freelist (stack_a);
-	ft_freelist (stack_b);
+		write (1, "KO\n", 3);
 }
