@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 10:21:31 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/14 22:38:26 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/18 03:22:16 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ int	main(int ac, char *av[])
 	if (ac == 1)
 		return (0);
 	stack_a = get_stack(ac, av, stack_a);
+	ft_duplicates(stack_a);
 	line = get_next_line(0);
 	while (line)
 	{
