@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 02:23:18 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/14 02:53:52 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/20 01:16:09 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,9 @@ void	utile_send_b_to_a(t_list *a, t_list *b, t_incs *incs)
 
 void	send_b_to_a(t_list *a, t_list *b, t_incs *incs)
 {
-	int		proximity;
-
-	proximity = (get_lsize(b) / 2);
+	// int		proximity;
+//
+	// proximity = (get_lsize(b) / 2);
 	incs->r = 0;
 	incs->index = get_lsize(b) - 1;
 	while (incs->index >= 0)

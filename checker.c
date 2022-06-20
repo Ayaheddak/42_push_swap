@@ -6,7 +6,7 @@
 /*   By: aheddak <aheddak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 10:21:31 by aheddak           #+#    #+#             */
-/*   Updated: 2022/06/18 03:22:16 by aheddak          ###   ########.fr       */
+/*   Updated: 2022/06/20 02:06:06 by aheddak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,10 @@ int	main(int ac, char *av[])
 	t_list	*stack_a;
 	t_list	*stack_b;
 
-	stack_a = creatlist();
-	stack_b = creatlist();
 	if (ac == 1)
 		return (0);
+	stack_a = creatlist();
+	stack_b = creatlist();
 	stack_a = get_stack(ac, av, stack_a);
 	ft_duplicates(stack_a);
 	line = get_next_line(0);
@@ -80,4 +80,6 @@ int	main(int ac, char *av[])
 		write(1, "OK\n", 3);
 	else
 		write (1, "KO\n", 3);
+	ft_freelist(stack_a);
+	ft_freelist(stack_b);
 }
